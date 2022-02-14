@@ -1,0 +1,19 @@
+
+.wrap{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  //background: #ddd;
+  flex-direction: column;
+}
+.title{
+  font-weight: bold;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textarea{
+  background: #fff;
+}

@@ -1,0 +1,91 @@
+// добавить троеточие к тексту елси не помещается содержимое
+@mixin more() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+// убрать фокус с элемента (акутально для input в хроме
+@mixin none-focus() {
+    outline: none !important;
+}
+// цвета для скролла
+@mixin scroll-color($scrollColor: #444, $bgColor:"") {
+    ::-webkit-scrollbar {
+        width: 5px;
+        background: $bgColor;
+    }
+    ::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: $bgColor;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $scrollColor;
+        opacity: .4;
+        border-radius: 10px;
+    }
+}
+// отразить по горизонатли
+@mixin mirror-horizontally() {
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    filter: "FlipH";
+    -ms-filter: "FlipH";
+}
+// отразить по вертикали
+@mixin mirror-vertically() {
+    -moz-transform: scale(1, -1);
+    -webkit-transform: scale(1, -1);
+    -o-transform: scale(1, -1);
+    transform: scale(1, -1);
+    filter: "FlipV";
+    -ms-filter: "FlipV";
+}
+// запретить перенос
+@mixin none-wrap() {
+    word-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+// скрыть визуальную часть скролла (сам скроллинг останется)
+@mixin none-scroll() {
+    &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+}
+
+
+//.icon {
+//  display: inline-block;
+//}
+// убрать возможность выделять выранные элемент (становится больше похоже на нативное приложение)
+@mixin none-select() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+$second: red;
+
+@mixin box-shadow($opacity: 0.2) {
+    box-shadow: var(--area-box-shadow);
+}
+
+@mixin border-radius($opacityRadius: .07) {
+    border: 1px solid rgb(255, 255, 255, $opacityRadius);
+}
+@mixin area-box($opacity: 1, $opacityRadius: .1) {
+    @include box-shadow($opacity);
+    @include border-radius($opacityRadius);
+}

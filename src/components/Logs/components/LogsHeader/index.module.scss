@@ -1,0 +1,14 @@
+
+.wrap{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  //background: #aaa;
+  align-items: center;
+  padding: 10px 0;
+}
+.left{
+}
+.right{
+  padding-left: 10px;
+}

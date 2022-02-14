@@ -1,0 +1,10 @@
+.idea
+.history
+.env
+.vscode
+node_modules
+coverage
+reports
+storybook-static
+dist
+typed-css.d.ts
